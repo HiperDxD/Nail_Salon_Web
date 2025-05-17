@@ -1,19 +1,23 @@
-<!-- templates/booking/book.html -->
 {% extends "base.html" %}
 
 {% block content %}
-  <h2 class="mb-4">Book an Appointment</h2>
-  <form method="post" class="card p-4 shadow-sm bg-white">
+<div class="py-4">
+  <h2 class="mb-4 text-center">Programari</h2>
+
+  <form method="post" class="mx-auto" style="max-width: 600px;">
     {% csrf_token %}
+    
     {% for field in form %}
       <div class="mb-3">
         <label class="form-label">{{ field.label }}</label>
         {{ field }}
         {% if field.errors %}
-          <div class="text-danger">{{ field.errors }}</div>
+          <div class="text-danger small">{{ field.errors|striptags }}</div>
         {% endif %}
       </div>
     {% endfor %}
-    <button type="submit" class="btn btn-primary">Submit</button>
+
+    <button type="submit" class="btn btn-primary">Finalizeaza Programarea</button>
   </form>
+</div>
 {% endblock %}

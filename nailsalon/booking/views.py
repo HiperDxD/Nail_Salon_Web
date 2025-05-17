@@ -16,7 +16,7 @@ def book_appointment(request):
                 [appointment.email],
                 fail_silently=False,
             )
-            return redirect('success')
+            return render(request, 'booking/success.html', {'form': form})
     else:
         form = AppointmentForm()
-    return render(request, 'booking/book_appointment.html', {'form': form})   
+    return render(request, 'booking/book.html', {'form': form})   

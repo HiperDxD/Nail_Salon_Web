@@ -7,3 +7,5 @@ def home(request):
 
 def services(request):
     return render(request, 'pages/services.html')
+
+
