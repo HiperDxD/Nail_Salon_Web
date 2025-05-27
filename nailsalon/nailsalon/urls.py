@@ -10,6 +10,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', page_views.home, name='home'),
     path('services/', page_views.services, name='services'),
+    path('services/<int:pk>/', page_views.service_detail, name='service_detail'),
     path('book/', booking_views.book_appointment, name='book'),
 ]
 
